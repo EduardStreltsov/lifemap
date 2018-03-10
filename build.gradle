@@ -1,0 +1,40 @@
+group 'com.lifemap'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+
+sourceCompatibility = '9.0.4'
+targetCompatibility = '9.0.4'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // core
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.0'
+
+    // spring
+    // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '5.0.3.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+    compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.0.3.RELEASE'
+
+    // persistence
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+
+    // https://mvnrepository.com/artifact/org.hibernate/
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.13.Final'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.2.13.Final'
+
+    // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
+    compile group: 'org.flywaydb', name: 'flyway-core', version: '5.0.7'
+
+
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
